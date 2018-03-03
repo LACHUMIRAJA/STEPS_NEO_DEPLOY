@@ -1,0 +1,101 @@
+
+Steps for Create and Deploy NEO JAVA projects.
+
+
+Tools and their Links To Download
+1. Windows 10 (suggested)
+2. Visual Studio 2017 - https://www.visualstudio.com/vs/community/
+3. JDK 1.8  - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+4. Eclipse - https://www.eclipse.org/downloads/packages/release/Oxygen/M2
+5. Neo Compiler - https://github.com/neo-project/neo-compiler
+6. Neo GUI - https://neo.org/download
+7. Neo Wallet  - https://neo.org/download
+
+
+
+
+Publish Neoj Compiler
+1. After Extract NeoCompiler zip, copy the "neoj.dll" file from  "neoj\obj\Release\netcoreapp1.1" to "neoj\obj\Release\netcoreapp1.1\win10-x64"
+2. And then Start Visual Studio and open->Project/solution-> choose neoj.csproj 
+3. Set the path in System Environment Variable for neoj compiler "neo-compiler-master\neo-compiler-master\neoj"
+4. And then publish the neoj.csproj in Visual Studio.
+5. Change the folder to publish through settings then publish.
+6. Once it succeed then goto command prompt type neoj and check it.
+
+ 
+Create Neo-Java Program
+1. Open Eclipse click new->Java project-> fill name -> finish
+2. Right Click on the project->Build Path->Build Path Configuration->Libraries->External Class Folder-> select "org.neo.smartcontract.framework".
+3. Convert the "org.neo.smartcontract.framework" folder to jar file and paste on the neoj folder.
+4. Again Right Click on project->New-> class File.
+5. Write the code.
+6. Build the Project.
+7. Run the Project. 
+8. You get the Class File on your folder that you can save the project.
+
+
+Generate AVM file
+1. Copy the class file from your project folder to neoj folder.
+2. Goto CommandPrompt and set the path to neoj folder.
+3. Compile the project using "neoj.exe filename.class".
+4. Once you get succeed, then you can get ".avm" file in neoj folder. 
+
+
+Create New Wallet in NEO GUI
+1. Open NEO GUI and click wallet->new wallet
+2. Create a name for wallet on any folder through browse. Fill passwords and submit. Wallet is created Successfully.
+3. Right Click on the wallet address and view the private and public key.
+
+
+Generate TestNetwok Gas in NEO GUI
+1. Goto the link "https://neo.org/Testnet/Create".
+2. Fill the information and then paste the public key on specific space.
+3. And Click submit. The NEO AND NEO GAS is generated with in a day or later.
+4. Once you get another public key and contract address from NEO organization through mail, Then You can create the contract-> Multi Signature by right click on wallet address.
+5. Here you need to paste another public key of wallet and your requested public key on it. And fill 1 on multi signature and submit.
+6. Download "chain.acc.test.zip"  file and change the name as "chain.acc.zip" and paste on NEO GUI folder.
+7. Copy the content from "configtest.json" file to "config.json" file.
+8. Copy the content from "protocoltest.json" file to "protocol.json" file.
+9. Rebuild the index on NEO GUI. 
+10. Once it synchronized you can get NEO and NEO Gas. But It takes huge time.(eg. a day or a week).
+
+
+Generate PrivateNetwork Gas in NEO GUI
+1.  It is a huge process. Just click the link and learn about these - https://medium.com/proof-of-working/how-to-run-a-private-network-of-the-neo-blockchain-d83004557359  
+
+
+
+
+Deploy contract
+1. Once You get the ".avm" file,NEO and NEO Gas then You are ready for Deploy. 
+2. Goto Advanced-> Deploy contract on NEO GUI.
+3. Fill Informations and Give Metadata(Parameter lists and return type as you given in smart contract) by using the link "http://docs.neo.org/en-us/sc/tutorial/Parameter.html". 
+4. Load ".avm" file and copy the hash to notepad or anything in your private side.
+5. Check on "Need storage" if you are needed. But it takes too gas value to deploy.
+6. Once check your given information is correct, Then click "Deploy" and then "Invoke".
+
+
+Getting Script Hash
+1. Right Click on  Wallet Address, Choose Create->Contract Add->Custom.
+2. Paste the hash then click "OK". Your New Contract Address is generated.
+3. Right Click on that Contract Address, Choose 'View Contract'.
+4. Copy 'Script Hash'.
+
+
+Invoking Contract
+1. Goto Advanced-> Invoke Contract 
+2. Paste The "Script Hash" and then click "Search"
+3. Information automatically listed.
+4. Click 'Test' for checking. And then Click 'Invoke'.
+
+
+
+Refer Links:
+
+1. OFFICIAL NEO LINK : http://docs.neo.org/en-us/index.html
+2. FOR NEO UNDERSTAND :https://hackernoon.com/what-is-neo-and-what-is-gas-5b9828a1aa65
+3. FOR NEO GUI :  https://github.com/CityOfZion/neo-gui-developer
+4. FOR JAVA EXAMPLES : https://github.com/neo-project/examples-java/pull/2/commits
+
+
+
